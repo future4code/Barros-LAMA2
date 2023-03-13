@@ -1,0 +1,23 @@
+### PEGAR TODOS USUÁRIOS
+GET http://localhost:3003/user/all
+Content-Type: application/json
+
+### CRIAR USUÁRIO
+POST http://localhost:3003/user/create
+Content-Type: application/json
+
+{
+    "name": "Diego",
+    "email": "didi@out.com",
+    "password": "bananinha123",
+    "role":"admin"
+}
+
+### FAZER LOGIN
+POST http://localhost:3003/user/login
+Content-Type: application/json
+
+{
+    "email": "didi@out.com",
+    "password": "bananinha123"
+}
