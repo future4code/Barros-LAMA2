@@ -1,7 +1,7 @@
 import * as jwt from "jsonwebtoken"; 
 import { ITokenGenerator } from "../business/ports";
 import { Unauthorized } from "../error/UserErros";
-import { AuthenticationData } from "../models/AuthenticationData";
+import { AuthenticationData } from "../models/servicesModel/AuthenticationData";
 
 export class TokenGenerator implements ITokenGenerator {
   private jwtKey = process.env.JWT_KEY as string;

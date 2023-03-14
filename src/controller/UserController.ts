@@ -1,9 +1,9 @@
 import { Request,Response } from "express";
 import { UserBusiness } from "../business/userBusiness/UserBusiness";
-import { GetAllUserOutput, InputLoginDTO, UserInputDTO } from "../models/UserModel";
+import { InputLoginDTO, TUserData, UserInputDTO } from "../models/UserModel";
 
 export class UserController {
-  constructor(private userBusines: UserBusiness){}
+  constructor(private userBusines: UserBusiness){};
   
   public createUser = async (req:Request, res:Response):Promise<void> => {
     try{
@@ -38,7 +38,7 @@ export class UserController {
   // --- -- -- -- -- -- -- // -- -- -- -- -- -- --  // -- -- -- -- -- -- --- //
   public getUsers = async (req:Request, res:Response):Promise<void> => {
     try{
-      const allUsers:GetAllUserOutput[] | string = await this.userBusines.getAllUsers();
+      const allUsers:TUserData[] | string = await this.userBusines.getAllUsers();
 
       res.status(200).send(allUsers);
     }catch(error:any){

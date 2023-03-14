@@ -1,4 +1,4 @@
-import { AuthenticationData } from "../models/AuthenticationData";
+import { AuthenticationData } from "../models/servicesModel/AuthenticationData";
 
 export interface ITokenGenerator {
   generateToken({id,role}:AuthenticationData):string; 

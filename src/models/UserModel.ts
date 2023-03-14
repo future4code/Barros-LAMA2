@@ -1,10 +1,4 @@
-export interface GetAllUserOutput {
-  id: string
-  name: string;
-  email: string;
-  password: string;
-  role: string;
-};
+
 // --- -- -- -- -- -- -- -- --- //
 export interface InputLoginDTO {
   email: string;
