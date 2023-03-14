@@ -21,9 +21,9 @@ export class BandBusiness {
   };
   // --- -- -- -- -- -- -- // -- -- -- -- -- -- --  // -- -- -- -- -- -- --- //
 
-  public bandDetail = async (input:model.GetBandDetailInput):Promise<model.BandDataOutput> => {
-    
-  };
+  // public bandDetail = async (input:model.GetBandDetailInput):Promise<model.BandDataOutput> => {
+
+  // };
   // --- -- -- -- -- -- -- // -- -- -- -- -- -- --  // -- -- -- -- -- -- --- //
 
   public getAllBands = async ():Promise<model.BandDataOutput[]> => {
