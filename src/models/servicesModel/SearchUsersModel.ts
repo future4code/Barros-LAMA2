@@ -1,5 +1,5 @@
-import { CustomError } from "../error/CustomError";
-import { TUserData } from "./UserModel";
+import { CustomError } from "../../error/CustomError";
+import { TUserData } from "../UserModel";
 
 export interface SearchUserOutput {
   user: TUserData | undefined;

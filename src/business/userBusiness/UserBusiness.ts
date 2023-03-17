@@ -1,7 +1,7 @@
 import { CustomError } from "../../error/CustomError";
 import * as Err from "../../error/UserErros";
 import * as Model from "../../models/UserModel";
-import { SearchUser } from "../../services/SearchUser";
+import { FuncsAlternats } from "../../services/funcsAlternats";
 import { IIdGenerator, ITokenGenerator } from "../ports";
 import { UserRepository } from "./UserRepository";
 
@@ -31,19 +31,23 @@ export class UserBusiness {
       }else if(password.length < 8){
         throw new Err.InvalidInputPassword()
       };
-      
+
+      if(name.length < 5){
+        throw new CustomError(409,"O nome deve conter ao menos 5 caracteres")
+      };
+
       const users:Model.TUserData[] = await this.userDatabase.getUsers();
-      const findUser = new SearchUser(users).findForEmail({email,name});
+      const findUser = new FuncsAlternats(users).findForEmail({email,name});
       if(findUser.userExist && findUser.error){
         throw findUser.error
-      }
+      };
 
       const id = this.idGenerator.generate();
       const newUser = {
         id, ...input
       };
       await this.userDatabase.createUser(newUser);
-
+      
       const token = this.tokenGenerator.generateToken({id:newUser.id, role});
       return token
     }catch (error:any) {
@@ -59,7 +63,7 @@ export class UserBusiness {
         throw new Err.InvalidInputLogin()
       }else if(!email.includes("@") || !email.includes(".com")){
         throw new Err.InvalidInputEmail()
-      }
+      };
 
       const user:Model.TUserData = await this.userDatabase.login(email);
       
@@ -70,7 +74,7 @@ export class UserBusiness {
       };
 
       const token = this.tokenGenerator.generateToken({id:user.id , role:user.role});
-      return token
+      return token;
       
     }catch (error:any) {
       throw new CustomError(error.statusCode, error.message);
@@ -78,9 +82,9 @@ export class UserBusiness {
   };
   // --- -- -- -- -- -- -- // -- -- -- -- -- -- --  // -- -- -- -- -- -- --- //
 
-  public getAllUsers = async ():Promise<Model.GetAllUserOutput[] | string> => {
+  public getAllUsers = async ():Promise<Model.TUserData[] | string> => {
     try{
-      let result:Model.GetAllUserOutput[] | string;
+      let result:Model.TUserData[] | string;
       const users =  await this.userDatabase.getUsers(); 
       [ users.length > 0 ? result = users : result = "Nenhum usuário cadastrado até o momento!"]
       return result;

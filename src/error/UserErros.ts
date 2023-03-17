@@ -3,7 +3,12 @@ import { CustomError } from "./CustomError";
 
 export class Unauthorized extends CustomError{ 
   constructor(){
-    super(401, "Usuário não autorizado: Verifique o token")
+    super(401, "Usuário não autorizado!")
+  }
+};
+export class UserTypeUnauthorizedADM extends CustomError{ 
+  constructor(){
+    super(401, "Usuário não autorizado: Voçê precisa estar logando em uma conta ADMIN para prosseguir!")
   }
 };
 // --- -- -- -- -- -- -- // -- -- -- -- -- -- --  // -- -- -- -- -- -- --- //
@@ -31,12 +36,12 @@ export class InvalidInputPassword extends CustomError{
 // --- -- -- -- -- -- -- // -- -- -- -- -- -- --  // -- -- -- -- -- -- --- //
 export class UserAlreadyCadasted extends CustomError{
   constructor(){
-    super(422,"Usuario já casdastrado")
+    super(409,"Usuario já casdastrado")
   }
 };
 export class EmailAlreadyCadasted extends CustomError{
   constructor(){
-    super(422,"Email já cadastrado")
+    super(409,"Email já cadastrado")
   }
 };
 // --- -- -- -- -- -- -- // -- -- -- -- -- -- --  // -- -- -- -- -- -- --- //
