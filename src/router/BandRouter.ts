@@ -17,3 +17,6 @@ const bandBusiness = new BandBusiness(
 const bandController = new BandController(bandBusiness);
 
 bandRouter.get("/all", (req,res) => bandController.getAllBands(req,res));
+
+bandRouter.post("/detail", (req,res) => bandController.getBandDetail(req,res));
+bandRouter.post("/inscription", (req,res) => bandController.bandInscription(req,res));

@@ -1,0 +1,51 @@
+### PEGAR TODOS USUÁRIOS
+GET http://localhost:3003/user/all
+Content-Type: application/json
+
+### CRIAR USUÁRIO
+POST http://localhost:3003/user/create
+Content-Type: application/json
+
+{
+    "name": "teste",
+    "email": "teste@out.com",
+    "password": "bananinha123",
+    "role":"normal"
+}
+
+### FAZER LOGIN
+POST http://localhost:3003/user/login
+Content-Type: application/json
+
+{
+    "email": "didi@out.com",
+    "password": "bananinha123"
+}
+### ----------- ------------- ------------ --------- ------ ###
+
+### baixo todos endpoints relacionados a entidade banda
+### PEGAR TODAS BANDAS
+GET http://localhost:3003/band/all
+Content-Type: application/json
+
+
+### PEGAR DETALHE DE UMA BANDA
+POST http://localhost:3003/band/detail
+Content-Type: application/json
+
+{
+  "id":"",
+  "name":"Queen"
+}
+###
+POST http://localhost:3003/band/inscription
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjM4NTJmY2U4LWZlNTktNDU2NC05ZmQ3LTRhNWM2YjVlOTEzNSIsInJvbGUiOiJub3JtYWwiLCJpYXQiOjE2NzkwMTA2NTIsImV4cCI6MTY3OTAxNDI1Mn0.WcZUUb6zseoR9lEWUP3TQv1urHqyX8PUeR-Z9h9g29Y
+
+{
+  "name":"Queen",
+  "musicGender":"Rock",
+  "responsible":"Fredy mercury"
+}
+
+### ----------- ------------- ------------ --------- ------ ###

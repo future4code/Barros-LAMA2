@@ -22,11 +22,6 @@ export interface GetBandIdOrName {
   name: string;
 };
 
-export interface GetBandDetailInput{
-  id: string;
-  name: string;
-  token: string;
-};
 
 export interface TBandData {
   id: string;

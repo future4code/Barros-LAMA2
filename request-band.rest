@@ -1,3 +1,0 @@
-### PEGAR TODAS BANDAS
-GET http://localhost:3003/band/all
-Content-Type: application/json

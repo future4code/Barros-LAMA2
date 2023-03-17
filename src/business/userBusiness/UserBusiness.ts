@@ -31,7 +31,11 @@ export class UserBusiness {
       }else if(password.length < 8){
         throw new Err.InvalidInputPassword()
       };
-      
+
+      if(name.length < 5){
+        throw new CustomError(409,"O nome deve conter ao menos 5 caracteres")
+      };
+
       const users:Model.TUserData[] = await this.userDatabase.getUsers();
       const findUser = new FuncsAlternats(users).findForEmail({email,name});
       if(findUser.userExist && findUser.error){
