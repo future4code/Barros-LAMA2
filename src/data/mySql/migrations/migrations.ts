@@ -1,5 +1,5 @@
 import { BaseDatabase } from "../BaseDatabase";
-import { TablesNames } from "../../models/TableNames";
+import { TablesNames } from "../../../models/TableNames";
 
 export class Migrations extends BaseDatabase {
   public migrationExec = async ():Promise<void> => {

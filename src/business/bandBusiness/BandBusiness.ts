@@ -48,18 +48,16 @@ export class BandBusiness {
 
   public getBandDetail = async (input:model.GetBandIdOrName):Promise<model.BandDataOutput> => {
     try{
-      const {id, name} = input;
-
-      if(!id && !name){
+      if(!input || input.id === ":band" || input.name === ":band"){
         throw new Err.InvalidBandDetailInput()
       };
-
+      
       const dataBand = await this.bandDatabase.getBandDetail(input)
       if(!dataBand){
         throw new Err.BandNotFound()
       };
 
-      const alterModelBand:model.BandDataOutput[] = new FuncsAlternats(undefined,[dataBand]).alterBandDateModel();
+      const alterModelBand:model.BandDataOutput[] = new FuncsAlternats().alterBandDateModel([dataBand]);
       return  alterModelBand[0]
 
     }catch (error:any) {
@@ -71,7 +69,7 @@ export class BandBusiness {
     try{
       const bands:model.TBandData[] = await this.bandDatabase.getAllBandsData();
       
-      const alter:model.BandDataOutput[] = new FuncsAlternats(undefined,bands).alterBandDateModel();
+      const alter:model.BandDataOutput[] = new FuncsAlternats().alterBandDateModel(bands);
       return alter;
     }catch (error:any) {
       throw new CustomError(error.statusCode, error.message);

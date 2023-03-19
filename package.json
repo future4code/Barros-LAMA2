@@ -7,7 +7,7 @@
     "build": "tsc",
     "dev": "ts-node-dev ./src/index.ts",
     "start": "tsc && node ./build/index.js",
-    "migrations": "tsc && node ./build/data/migrations/migrations.js"
+    "migrations": "tsc && node ./build/data/mySql/migrations/migrations.js"
   },
   "repository": {
     "type": "git",

@@ -2,7 +2,7 @@ import { BandRepository } from "../business/bandBusiness/BandRepository";
 import { CustomError } from "../error/CustomError";
 import { GetBandIdOrName, TBandData } from "../models/BandDataModel";
 import { TablesNames } from "../models/TableNames";
-import { BaseDatabase } from "./BaseDatabase";
+import { BaseDatabase } from "./mySql/BaseDatabase";
 
 export class BandDatabase extends BaseDatabase implements BandRepository{
   public bandInscription = async (input: TBandData): Promise<void> => {

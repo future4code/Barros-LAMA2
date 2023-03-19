@@ -23,24 +23,20 @@ Content-Type: application/json
 }
 ### ----------- ------------- ------------ --------- ------ ###
 
-### baixo todos endpoints relacionados a entidade banda
+### abaixo todos endpoints relacionados a entidade banda
 ### PEGAR TODAS BANDAS
 GET http://localhost:3003/band/all
 Content-Type: application/json
 
 
-### PEGAR DETALHE DE UMA BANDA
-POST http://localhost:3003/band/detail
+### PEGAR DETALHE DE UMA BANDA POR NOME OU ID
+GET http://localhost:3003/band/detail/teste2
 Content-Type: application/json
 
-{
-  "id":"",
-  "name":"Queen"
-}
 ###
 POST http://localhost:3003/band/inscription
 Content-Type: application/json
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjM4NTJmY2U4LWZlNTktNDU2NC05ZmQ3LTRhNWM2YjVlOTEzNSIsInJvbGUiOiJub3JtYWwiLCJpYXQiOjE2NzkwMTA2NTIsImV4cCI6MTY3OTAxNDI1Mn0.WcZUUb6zseoR9lEWUP3TQv1urHqyX8PUeR-Z9h9g29Y
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjFjNmY4MWE1LWI0NGYtNDBjYi04NjM4LTQxNmY5ZDQ4OGE2NSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTY3OTE3MDAxMiwiZXhwIjoxNjc5MTczNjEyfQ.Ej25joEYFYLyCiO0f215lwU_9ywuRs-jy9oqj9W0DEI
 
 {
   "name":"Queen",
@@ -49,3 +45,21 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjM4NTJmY2U4LWZlNTkt
 }
 
 ### ----------- ------------- ------------ --------- ------ ###
+### Endpoints relacionados a entidade show
+POST http://localhost:3003/show/create
+Content-Type: application/json
+
+{
+ "weekDay": "SABADO",
+  "startTime": 9,
+  "endTime": 13,
+  "bandId":"158c3b48-5f7f-4b5a-949a-5c7ffbeb2c63"
+}
+
+### BUSCAR TODOS OS SHOWS NO DIA TAL
+GET  http://localhost:3003/show/day/sexta
+Content-Type: application/json
+
+### PEGAR TODOS OS SHOWS EXISTENTES
+GET  http://localhost:3003/show/all
+Content-Type: application/json

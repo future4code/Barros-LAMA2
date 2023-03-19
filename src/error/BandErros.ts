@@ -17,7 +17,7 @@ export class InvalidNameBand extends CustomError{
 // ------ /// ------------ /// --------- ///- ----- //
 export class InvalidBandDetailInput extends CustomError{
   constructor(){
-    super(422, "Verifique se todos os campos ('id', 'name') foram preenchidos corretamente")
+    super(422, "Passe o 'id' ou o 'nome' de uma banda!")
   }
 };
 
@@ -29,6 +29,6 @@ export class InvalidBandId extends CustomError{
 
 export class BandNotFound extends CustomError{
   constructor(){
-    super(404, "Verifique se o 'id' e o 'name' da banda estão corretos")
+    super(404, "Verifique se o 'id' ou 'nome' da banda esta correto")
   }
 };
