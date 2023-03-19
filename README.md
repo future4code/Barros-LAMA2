@@ -12,11 +12,11 @@ Para isso já deixamos algumas tabelas prontas para vocês não precisarem se pr
 ---
 ## 📖 Documentação 
 
-
+https://documenter.getpostman.com/view/22376175/2s93JzMgJF
 
 ---
 ## 📚 Deploy no Render
-
+https://project-lama.onrender.com
 
 ---
 ## 🚧 Requisitos do Projeto
