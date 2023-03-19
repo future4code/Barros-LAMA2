@@ -37,7 +37,7 @@ export class UserBusiness {
       };
 
       const users:Model.TUserData[] = await this.userDatabase.getUsers();
-      const findUser = new FuncsAlternats(users).findForEmail({email,name});
+      const findUser = new FuncsAlternats().findForEmail(users,{email,name});
       if(findUser.userExist && findUser.error){
         throw findUser.error
       };

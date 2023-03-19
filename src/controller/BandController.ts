@@ -24,8 +24,8 @@ export class BandController {
   public getBandDetail = async (req:Request, res:Response):Promise<void> => {
     try{
       const input:GetBandIdOrName = {
-        id:req.body.id,
-        name: req.body.name
+        id:req.params.band,
+        name: req.params.band
       }; 
       const bandDetail = await this.bandBusiness.getBandDetail(input);
       res.status(200).send(bandDetail);
