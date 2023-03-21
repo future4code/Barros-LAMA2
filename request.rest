@@ -1,0 +1,65 @@
+### PEGAR TODOS USUÁRIOS
+GET http://localhost:3003/user/all
+Content-Type: application/json
+
+### CRIAR USUÁRIO
+POST http://localhost:3003/user/create
+Content-Type: application/json
+
+{
+    "name": "teste",
+    "email": "teste@out.com",
+    "password": "bananinha123",
+    "role":"normal"
+}
+
+### FAZER LOGIN
+POST http://localhost:3003/user/login
+Content-Type: application/json
+
+{
+    "email": "didi@out.com",
+    "password": "bananinha123"
+}
+### ----------- ------------- ------------ --------- ------ ###
+
+### abaixo todos endpoints relacionados a entidade banda
+### PEGAR TODAS BANDAS
+GET http://localhost:3003/band/all
+Content-Type: application/json
+
+
+### PEGAR DETALHE DE UMA BANDA POR NOME OU ID
+GET http://localhost:3003/band/detail/teste2
+Content-Type: application/json
+
+###
+POST http://localhost:3003/band/inscription
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjFjNmY4MWE1LWI0NGYtNDBjYi04NjM4LTQxNmY5ZDQ4OGE2NSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTY3OTE3MDAxMiwiZXhwIjoxNjc5MTczNjEyfQ.Ej25joEYFYLyCiO0f215lwU_9ywuRs-jy9oqj9W0DEI
+
+{
+  "name":"Queen",
+  "musicGender":"Rock",
+  "responsible":"Fredy mercury"
+}
+
+### ----------- ------------- ------------ --------- ------ ###
+### Endpoints relacionados a entidade show
+POST http://localhost:3003/show/create
+Content-Type: application/json
+
+{
+ "weekDay": "SABADO",
+  "startTime": 9,
+  "endTime": 13,
+  "bandId":"158c3b48-5f7f-4b5a-949a-5c7ffbeb2c63"
+}
+
+### BUSCAR TODOS OS SHOWS NO DIA TAL
+GET  http://localhost:3003/show/day/sexta
+Content-Type: application/json
+
+### PEGAR TODOS OS SHOWS EXISTENTES
+GET  http://localhost:3003/show/all
+Content-Type: application/json
